@@ -33,7 +33,6 @@ def get_each_page(url):
         price = get_jd_price(good_addr)
         comp_info[comp_name] = {}
         comp_info[comp_name]['价格'] = price
-
         try:
             for param in param_list:
                 param_info = str(param.string).split('：')
@@ -71,7 +70,6 @@ def analysis(page_span):
             chart.add('', attr, value, shape="circle", is_label_show=True, is_legend_show=False,
                       is_area_show=True)
             chart.render('%s.html' % param_column)
-
         else:
             # 画图
             chart = Pie(param_column, width=800, height=500, title_pos='center')
